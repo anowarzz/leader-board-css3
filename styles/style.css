@@ -86,12 +86,21 @@ hr {
 /* ---------------
  Courses Style 
  -------------- */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  margin-bottom: 20px;
+}
+
 .course .course-banner img {
   width: 224px;
   height: 104px;
 }
 .course-info {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .fa-star {
@@ -106,10 +115,49 @@ hr {
 
 .fa-clock {
   margin-left: 10px;
+  color: black;
 }
 .course-duration {
   width: 95px;
   height: 29px;
   background-color: #91da0b;
+  color: black;
   border-radius: 13px;
+}
+
+/* -------------
+  Media Queries
+--------------*/
+/* ____________
+Mobile devices
+--------------- */
+
+@media only screen and (max-width: 688px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .blogs,
+  .courses {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .player,
+  .blogs {
+    flex-direction: column;
+  }
+}
+/*------------
+       tablet divices
+       ------------- */
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blogs {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
